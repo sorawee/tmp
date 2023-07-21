@@ -37,7 +37,7 @@
     const elem = document.getElementById(anchor);
     if (elem) {
       elem.checked = true;
-      document.querySelector(`#${anchor} + label`).scrollIntoView();
+      document.querySelector(`#${anchor} + label + div.tab`).scrollIntoView({ block: 'center' });
     }
   }
   const btnOnClick = e => {
