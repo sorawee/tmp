@@ -327,7 +327,7 @@ the types <code>string</code>, <code>int</code>, and <code>string</code> are ali
 
 <p>Another application is to use the tools in code generation or program synthesis. 
 Traditionally, code generation produces a syntax tree that lacks source location. 
-As a result, a naive output from code generation usually “puts everything in a single line”, which is difficult to read.
+As a result, a naive output from code generation usually puts everything in a single line, which is difficult to read.
 Code formatters can be employed to make the output human-readable.</p>
 
 <figure class="figure">
@@ -370,7 +370,7 @@ We call code formatters <em>line-preserving</em> if they do not honor the page w
 <p>A <em>line-preserving</em> code formatter does not honor the page width limit. 
 It mostly formats whitespaces within each line, 
 but preserves line breaks in the original code.
-That is, it will never add line breaks to split up a long line that goes over the page width limit, 
+That is, it will not add line breaks to split up a long line that goes over the page width limit, 
 or consolidate short lines that could fit under the page width limit.</p>
 
 <figure class="figure" id="quick_sort">
@@ -397,7 +397,7 @@ or consolidate short lines that could fit under the page width limit.</p>
 <figcaption class="caption">
 Fig 5. A formatted <code>quicksort</code> function in Go, 
 via <code>gofmt</code>, which is mostly a line-preserving code formatter. 
-Because the formatter will never add a line break, 
+Because the formatter will not add a line break, 
 the formatted code could exceed the page width limit, 
 illustrated with the red verticle line. 
 </figcaption>
@@ -740,16 +740,16 @@ Printer. Proc. ACM Program. Lang. 7(OOPSLA2): 1122-1149 (2023).
 <hr>
 
 <p><a id="note-consistency-callee" href="#note-consistency-caller">#</a>:
-There are different scales of consistency, however. 
-In this post we are talking about consistency within a <em>project</em>,
-but some may only care about consistency within a file.
-Some may prefer a language-level consistency.</p>
+There are different scales of consistency. 
+This post focuses on consistency within a <em>project</em>,
+but some people may only care about consistency within a file.
+Others may prefer that the language provides one true way to format code that everyone must follow.</p>
 
 <p><a id="note-opinionated-callee" href="#note-opinionated-caller">§</a>: 
-The definition of <em>opinionated</em> in this post follows the master’s thesis by Ólafur Páll Geirsson [<a href="#ref-3">3</a>].
-However, some people may colloquially use <em>opinionated</em> to mean being less flexible or having few configuration options. 
-In goal in the end for <em>opinionated</em> code formatters is to improve consistency,
-and it could be argued that having many knobs to adjust decreases the consistency.</p>
+The definition of “opinionated” in this post follows the master’s thesis by Ólafur Páll Geirsson [<a href="#ref-3">3</a>].
+However, some people may colloquially use “opinionated” to mean being less flexible or having few configuration options.
+The goal in the end for opinionated code formatters is to improve consistency,
+and it could be argued that having many knobs for users to adjust decreases the level of consistency.</p>
 
 <p><a id="note-go-line-preserving-callee" href="#note-go-line-preserving-caller">†</a>:
  
