@@ -1,0 +1,99 @@
+.post header, .post > h1 {
+  display: auto;
+  background: none;
+  margin-bottom: 0.75em;
+  padding: 0px;
+  color: #4b2e83;
+}
+
+.post header h1 {
+  display: auto;
+  background: none;
+  color: inherit;
+  height: auto;
+  color: #4b2e83;
+  width: auto;
+}
+
+.post h3 > a {
+  color: #4b2e83;
+}
+
+.post blockquote {
+  margin-left: 10%;
+  margin-right: 5%;
+}
+
+.post img + em {
+  font-size: 14px;
+}
+
+.post #reference {
+  font-size: 14px;
+}
+
+article.post {
+  margin-bottom: 1em;
+}
+
+.post-meta {
+  color: #666;
+  margin-top: auto;
+  margin-bottom: 1em;
+}
+
+
+.post-author {
+  padding-right: 1em;
+}
+
+.pagination {
+  text-align: center;
+}
+
+.post table {
+  margin: 0;
+  width: 100%;
+}
+
+.post div.back {
+  margin-bottom: 1em;
+}
+
+div.post-keywords {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+span.keywords-container {
+  padding: 4px;
+  border-radius: 4px;
+  background: #4b2e83;
+  margin: 3px 5px 3px;
+  display: inline-block;
+  opacity: 0.75;
+  color: #FFFFFF;
+}
+span.keywords-container a {
+  color: #FFFFFF;
+}
+
+/* overrides default <code> styling, which uses white-space: pre */
+span.keywords-container code {
+  white-space: nowrap;
+}
+
+span.keywords-container:hover {
+  opacity: 1;
+}
+
+#feed-icon {
+  filter: grayscale(100%) opacity(0.5);
+  -webkit-filter: grayscale(100%) opacity(0.5);
+  height: 1.5rem;
+}
+
+#feed-icon:hover {
+  filter: grayscale(0%) opacity(1.0);
+  -webkit-filter: grayscale(0%) opacity(1.0);
+}

@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>UW PLSE | The Science of Code Formatting (Part I)</title>
+  <link rel="stylesheet" type="text/css" href="UW%20PLSE%20The%20Science%20of%20Code%20Formatting%20(Part%20I)_files/dash.css">
+  <link rel="stylesheet" type="text/css" href="UW%20PLSE%20The%20Science%20of%20Code%20Formatting%20(Part%20I)_files/blog_style.css">
+  <link rel="stylesheet" type="text/css" href="UW%20PLSE%20The%20Science%20of%20Code%20Formatting%20(Part%20I)_files/syntax.css">
+  <link rel="stylesheet" href="UW%20PLSE%20The%20Science%20of%20Code%20Formatting%20(Part%20I)_files/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- icons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="http://127.0.0.1:4000/icons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="http://127.0.0.1:4000/icons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="http://127.0.0.1:4000/icons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="http://127.0.0.1:4000/icons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="http://127.0.0.1:4000/icons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="http://127.0.0.1:4000/icons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="http://127.0.0.1:4000/icons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="http://127.0.0.1:4000/icons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="http://127.0.0.1:4000/icons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="http://127.0.0.1:4000/icons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="http://127.0.0.1:4000/icons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="http://127.0.0.1:4000/icons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="http://127.0.0.1:4000/icons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="http://127.0.0.1:4000/icons/manifest.json">
+  <link rel="mask-icon" href="http://127.0.0.1:4000/icons/safari-pinned-tab.svg" color="#4b2e83">
+  <link rel="shortcut icon" href="http://127.0.0.1:4000/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#4b2e83">
+  <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
+  <meta name="msapplication-config" content="/icons/browserconfig.xml">
+  <meta name="theme-color" content="#4b2e83">
+
+  
+    
+
+
+
+
+
+
+  
+
+  
+
+  <!-- end icons -->
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"></head>
+<body><div id="MathJax_Message" style="display: none;"></div>
+  <header>
+  <a href="http://127.0.0.1:4000/">
+    <img class="logo" src="UW%20PLSE%20The%20Science%20of%20Code%20Formatting%20(Part%20I)_files/header@2x.png" alt="PLSE homepage">
+  </a>
+  <nav>
+  <ul style="margin: 0; padding: 0;">
+    <li class="nav-first-row"><a href="http://127.0.0.1:4000/#news">News</a></li>
+    <li class="nav-first-row"><a href="http://127.0.0.1:4000/blog/">Blog</a></li>
+    <li class="nav-first-row"><a href="http://127.0.0.1:4000/#projects">Projects</a></li>
+    <li class="nav-first-row"><a href="http://127.0.0.1:4000/#faculty">People</a></li>
+    <li><a href="http://127.0.0.1:4000/colloquia/">Colloquia</a></li>
+    <li><a href="http://127.0.0.1:4000/meet/">Meetings</a></li>
+    <li><a href="http://127.0.0.1:4000/internal/">Internal</a></li>
+  </ul>
+  </nav>
+</header>
+
+  <!-- <header>
+    <a href="/">
+      <h1>UW PLSE</h1>
+    </a>
+    <nav>
+      <li><a href="/#news">News</a></li>
+      <li><a href="/#projects">Projects</a></li>
+      <li><a href="/#faculty">People</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/meet/">Meetings</a></li>
+      <li><a href="/internal/">Internal</a></li>
+    </nav>
+  </header> -->
+
+  <article id="content">
+  <article class="post">
+  <header>
+    <h1>The Science of Code Formatting (Part I)</h1>
+  </header>
+  <section class="post-meta">
+  <span class="fa fa-pencil" aria-hidden="true"></span>
+  <span class="post-author">Sorawee Porncharoenwase</span>
+  <span class="fa fa-calendar" aria-hidden="true"></span>
+  <time>04 March 2024</time>
+</section>
+
+
+  <div class="entry">
+    <p>Code formatters are tools to make source code in a programming language easy to read.
+This series of blog posts presents a systematic analysis of code formatters.
+We aim to answer the following questions:
+What are the advantages and disadvantages of different kinds of code formatters (for both users and implementers)? 
+How do they work?
+And what are open problems in this space?</p>
+
+<hr>
+
+<style type="text/css">
+  td {
+    border: 1px solid black;
+  }
+  figure, pre {
+    margin: 0;
+  }
+  figure pre {
+    font-size: 80%;
+  }
+  figcaption.caption {
+    font-style: italic;
+    margin-top: 1em;
+  }
+  figure.figure {
+    margin: 1.5em;
+    font-size: 90%;
+    padding: 1em;
+    border: 1px solid black;
+  }
+  #quick_sort pre {
+    border-right: 3px solid red;
+  }
+</style>
+
+<p>(Automatic) code formatting has become very popular in the past decade.
+Many modern programming languages even include a code formatter along with its main implementation, 
+showing how integral the tool has become in code development.
+This post will be an introduction to the topic of code formatting.
+We will start by reviewing its use-cases, 
+and then analyze features of code formatters based on various classifications.</p>
+
+<h3 id="applications-of-code-formatting">Applications of Code Formatting</h3>
+
+<p>An obvious use-case of code formatters is to reformat a poorly formatted code, 
+so that the formatted code conforms to <em>coding conventions</em> or <em>style guides</em>.
+This makes the code easy to read and maintain.</p>
+
+<figure class="figure">
+<table>
+<tbody><tr>
+<td>
+
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">concatenation</span> <span class="nv">in</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">([</span><span class="nf">acc</span> <span class="s">""</span><span class="p">])(</span><span class="nf">for</span> <span class="p">([</span><span class="nf">i</span> <span class="nv">in</span><span class="p">])</span>
+          <span class="p">(</span><span class="k">set!</span> <span class="nv">acc</span> <span class="p">(</span><span class="nb">format</span> 
+<span class="s">"~a~a"</span> <span class="nv">acc</span> <span class="nv">i</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="nv">acc</span>
+  <span class="p">)</span>
+<span class="p">)</span></code></pre></figure>
+
+</td>
+<td>
+
+<figure class="highlight"><pre><code class="language-racket" data-lang="racket"><span class="p">(</span><span class="k">define</span> <span class="p">(</span><span class="nf">concatenation</span> <span class="nv">in</span><span class="p">)</span>
+  <span class="p">(</span><span class="k">let</span> <span class="p">([</span><span class="nf">acc</span> <span class="s">""</span><span class="p">])</span>
+    <span class="p">(</span><span class="nf">for</span> <span class="p">([</span><span class="nf">i</span> <span class="nv">in</span><span class="p">])</span>
+      <span class="p">(</span><span class="k">set!</span> <span class="nv">acc</span> 
+            <span class="p">(</span><span class="nb">format</span> <span class="s">"~a~a"</span> <span class="nv">acc</span> <span class="nv">i</span><span class="p">)))</span>
+    <span class="nv">acc</span><span class="p">))</span>
+
+ </code></pre></figure>
+
+</td>
+</tr>
+</tbody></table>
+<figcaption class="caption">
+Fig 1. Left: a modified Racket code originally written by a Racket language learner in the Racket Discord.
+Right: the corresponding formatted code output by the Racket code formatter.
+</figcaption>
+</figure>
+
+<p>An important aspect of readability is <em>consistency</em>&nbsp;<sup><a id="note-consistency-caller" href="#note-consistency-callee">#</a></sup>.
+Especially in collaborative projects, 
+collaborators should use the same coding convention consistently.
+Code formatters are thus often employed to enforce consistent conventions.</p>
+
+<p>One indirect benefit is an improved code reviewing process.
+Pull requests with inconsistent formatting will highly likely to result in change requests to fix the issues.
+This blocks the merge, wasting the time of both the submitter and reviewer.
+With a code formatter, the submitter can catch these mistakes 
+before the review process begins (e.g. by running the code formatter locally, or as a part of the CI).</p>
+
+<figure class="figure">
+<img src="UW%20PLSE%20The%20Science%20of%20Code%20Formatting%20(Part%20I)_files/review.png" alt="A screenshot of my PHP code along with reviews">
+<figcaption class="caption">
+Fig 2. My pull request to the MediaWiki project that got nitpicked on formatting. 
+Using a PHP code formatter (with an appropriate configuration) 
+could have avoided this mistake.
+</figcaption>
+</figure>
+
+<p>Code formatters can also be seen as convenience tools to automate tedious formatting tasks.
+For example, in the Go language, 
+it is preferable that types and variables are aligned in a “tabular layout”, which looks nice to readers.
+However, manually formatting this tabular layout is tedious, 
+as it potentially involves editing many lines to align the code.
+What a Go user would do is to write their program without taking the tabular layout into consideration,
+and then rely on the Go code formatter to format the tabular layout properly.</p>
+
+<figure class="figure">
+<table>
+<tbody><tr>
+<td>
+
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><span class="k">type</span> <span class="n">person</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">name</span> <span class="kt">string</span>
+    <span class="n">age</span> <span class="kt">int</span>
+    <span class="n">address</span> <span class="kt">string</span>
+<span class="p">}</span></code></pre></figure>
+
+</td>
+<td>
+
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><span class="k">type</span> <span class="n">person</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">name</span>    <span class="kt">string</span>
+    <span class="n">age</span>     <span class="kt">int</span>
+    <span class="n">address</span> <span class="kt">string</span>
+<span class="p">}</span></code></pre></figure>
+
+</td>
+</tr>
+</tbody></table>
+<figcaption class="caption">
+Fig 3. Left: a snippet of Go code that a user may write. 
+Right: the corresponding formatted code, which has the "tabular layout": 
+the types <code>string</code>, <code>int</code>, and <code>string</code> are aligned to be on the same column position.
+</figcaption>
+</figure>
+
+<p>Another application is to use the tools in code generation or program synthesis. 
+Traditionally, code generation produces a syntax tree that lacks source location. 
+As a result, a naive output from code generation usually “puts everything in a single line”, which is difficult to read.
+Code formatters can be employed to make the output human-readable.</p>
+
+<figure class="figure">
+<img src="UW%20PLSE%20The%20Science%20of%20Code%20Formatting%20(Part%20I)_files/rosette.png" alt="A screenshot of a Rosette program along with its synthesized code output">
+<figcaption class="caption">
+Fig 4. A <a href="https://docs.racket-lang.org/rosette-guide/">Rosette</a> program to synthesize an expression that computes, with only bit operations, the minimum of two <code>int32</code> variables <code>a</code> and <code>b</code>. 
+The synthesized code is formatted with a code formatter so that it is readable.
+</figcaption>
+</figure>
+
+<p>One can also use code formatters in computing education:
+the formatters can not only help making students’ code more readable, 
+but also give them examples of how to properly format their code.</p>
+
+<p>I hope you are convinced now why code formatters are valuable. 
+As it turns out, there are actually many kinds of code formatters. 
+In the next section, we will take a look at different types of code 
+formatters and see what their advantages and disadvantages are.</p>
+
+<h3 id="classifications-of-code-formatters">Classifications of Code Formatters</h3>
+
+<p>Most code formatters follow the same pipeline. 
+They first read the source code into a representation that can be easily analyzed. 
+Then, they perform formatting on the representation, producing a formatted code. 
+Details of these steps could vary significantly in different code formatters, however.</p>
+
+<p>An important classification of code formatters is whether the formatting process honors the <em>page width limit</em>, 
+which is the number of characters that line lengths should not exceed.
+The page width limit is a very common element in coding style guide.
+Intuitively, an overly long line is bad:
+the line might be soft-wrapped by an editor, which is difficult to read.
+The editor might alternatively be configured to only show the code partially,
+requiring users to use a horizontal scroll bar to view the other parts, which is also not ideal.
+The page width limit is thus a threshold to prevent this problem.
+We call code formatters <em>line-preserving</em> if they do not honor the page width limit; 
+<em>line-breaking</em>, otherwise.</p>
+
+<h4 id="line-preserving-vs-line-breaking">Line-Preserving vs Line-Breaking</h4>
+
+<p>A <em>line-preserving</em> code formatter does not honor the page width limit. 
+It mostly formats whitespaces within each line, 
+but preserves line breaks in the original code.
+That is, it will never add line breaks to split up a long line that goes over the page width limit, 
+or consolidate short lines that could fit under the page width limit.</p>
+
+<figure class="figure" id="quick_sort">
+
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><span class="k">func</span> <span class="n">quicksort</span><span class="p">(</span><span class="n">xs</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="m">1</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="n">xs</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="n">pivot</span> <span class="o">:=</span> <span class="n">xs</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>
+		<span class="k">var</span> <span class="n">less_than</span><span class="p">,</span> <span class="n">greater_than</span><span class="p">,</span> <span class="n">same</span> <span class="p">[]</span><span class="kt">int</span>
+		<span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">x</span> <span class="o">:=</span> <span class="k">range</span> <span class="n">xs</span> <span class="p">{</span>
+			<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">pivot</span> <span class="p">{</span>
+				<span class="n">same</span> <span class="o">=</span> <span class="nb">append</span><span class="p">(</span><span class="n">same</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+			<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">pivot</span> <span class="p">{</span>
+				<span class="n">less_than</span> <span class="o">=</span> <span class="nb">append</span><span class="p">(</span><span class="n">less_than</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+				<span class="n">greater_than</span> <span class="o">=</span> <span class="nb">append</span><span class="p">(</span><span class="n">greater_than</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="nb">append</span><span class="p">(</span><span class="nb">append</span><span class="p">(</span><span class="n">quicksort</span><span class="p">(</span><span class="n">less_than</span><span class="p">),</span> <span class="n">same</span><span class="o">...</span><span class="p">),</span> <span class="n">quicksort</span><span class="p">(</span><span class="n">greater_than</span><span class="p">)</span><span class="o">...</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<figcaption class="caption">
+Fig 5. A formatted <code>quicksort</code> function in Go, 
+via <code>gofmt</code>, which is mostly a line-preserving code formatter. 
+Because the formatter will never add a line break, 
+the formatted code could exceed the page width limit, 
+illustrated with the red verticle line. 
+</figcaption>
+</figure>
+
+<p>The family of line-preserving code formatters is exemplified by the Go code formatter <a href="https://go.dev/blog/gofmt"><code class="language-plaintext highlighter-rouge">gofmt</code></a><a id="note-go-line-preserving-caller" href="#note-go-line-preserving-callee"><sup>†</sup></a>, 
+which popularizes code formatting in modern languages.
+Tools like <em>code indenter</em>, commonly implemented for Emacs modes, 
+could also be seen as a form of line-preserving code formatter.</p>
+
+<p>There are advantages of line-preserving code formatters, however. 
+Users know the semantics of their program, 
+and could deliberately use line breaks to make the meaning of the program clear. 
+In <a href="#gofmt-place_image">Fig 6</a>, 
+the function <code class="language-plaintext highlighter-rouge">place_image</code> consumes an image, 
+two numbers that together specify a coordinate for image placement, 
+and then a background image.
+The users could intentionally place the two numbers together, 
+separated from other arguments, 
+to highlight the fact that they form a coordinate. 
+This fact would not be apparent to code formatters.
+But because line-preserving code formatters preserve the existing line breaks, 
+the formatting decision by the users is still respected.
+To put it differently, line-preserving code formatters do not make any formatting decisions on their own.
+For this reason, line-preserving code formatters are also known as <em>unopinionated</em>.
+In contrast, the formatters that honor line breaks will usually make 
+their own formatting decisions from scratch, 
+disregarding decisions by the users, 
+as shown in <a href="#prettier-place_image">Fig 7</a>.</p>
+
+<figure class="figure" id="gofmt-place_image">
+
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><span class="k">return</span> <span class="n">place_image</span><span class="p">(</span>
+	<span class="n">segment_right</span><span class="p">,</span>
+	<span class="m">350</span><span class="p">,</span> <span class="m">200</span><span class="p">,</span>
+	<span class="n">place_image</span><span class="p">(</span>
+		<span class="n">segment_up</span><span class="p">,</span>
+		<span class="m">285</span><span class="p">,</span> <span class="m">300</span><span class="p">,</span>
+		<span class="n">place_image</span><span class="p">(</span>
+			<span class="n">segment_down</span><span class="p">,</span>
+			<span class="m">200</span><span class="p">,</span> <span class="m">200</span><span class="p">,</span>
+			<span class="n">place_image</span><span class="p">(</span>
+				<span class="n">segment_up</span><span class="p">,</span>
+				<span class="m">115</span><span class="p">,</span> <span class="m">110</span><span class="p">,</span>
+				<span class="n">place_image</span><span class="p">(</span>
+					<span class="n">segment_right</span><span class="p">,</span>
+					<span class="m">50</span><span class="p">,</span> <span class="m">200</span><span class="p">,</span>
+					<span class="n">empty_scene</span><span class="p">(</span><span class="m">400</span><span class="p">,</span> <span class="m">400</span><span class="p">,</span> <span class="n">plse_color</span><span class="p">),</span>
+				<span class="p">),</span>
+			<span class="p">),</span>
+		<span class="p">),</span>
+	<span class="p">),</span>
+<span class="p">)</span></code></pre></figure>
+
+<figcaption class="caption">
+Fig 6. A formatted Go expression to build a crude UW PLSE logo. 
+In the function calls to <code>place_image</code>, 
+I put the second and third arguments together to make it clear that they form a coordinate,
+and the code formatter preserves this formatting decision.
+</figcaption>
+</figure>
+
+<p>The line-preserving code formatters are also relatively simpler, 
+and easier to implement, 
+compared to formatters that honors the page width limit.
+And as a result, the performance of line-preserving formatters also tend to be really great.</p>
+
+<p>Because of these characteristics, line-preserving code formatters are suitable as convenience tools for formatting, 
+but may have relatively limited value for getting formatted code to be consistent.</p>
+
+<p>On the other hand, a <em>line-breaking</em> code formatter will honor 
+the page width limit. 
+That is, it will try to add line breaks to split up a long line that 
+goes over the page width limit, 
+and consolidate short lines that could fit under the page width limit.
+This is the original form of code formatting, 
+which appeared in the code formatters for ALGOL 60 and LISP [<a href="#ref-1">1</a>, <a href="#ref-2">2</a>].
+Modern line-breaking code formatters include: 
+<a href="https://prettier.io/">Prettier</a> for JavaScript, 
+<a href="https://clang.llvm.org/docs/ClangFormat.html"><code class="language-plaintext highlighter-rouge">clang-format</code></a> for C (when <code class="language-plaintext highlighter-rouge">ColumnLimit</code> is not 0), 
+and <a href="https://rust-lang.github.io/rustfmt/"><code class="language-plaintext highlighter-rouge">rustfmt</code></a> for Rust.
+Because formatting decisions are (mostly) made without considering 
+the formatting in the original code, 
+line-breaking code formatters are also known as <em>opinionated</em>&nbsp;<sup><a id="note-opinionated-caller" href="#note-opinionated-callee">§</a></sup> [<a href="#ref-3">3</a>]. 
+This ensures consistency, at the cost of losing 
+the original formatting decisions made by the users.</p>
+
+<figure class="figure" id="prettier-place_image">
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">return</span> <span class="nx">place_image</span><span class="p">(</span>
+  <span class="nx">segment_right</span><span class="p">,</span>
+  <span class="mi">350</span><span class="p">,</span>
+  <span class="mi">200</span><span class="p">,</span>
+  <span class="nx">place_image</span><span class="p">(</span>
+    <span class="nx">segment_up</span><span class="p">,</span>
+    <span class="mi">285</span><span class="p">,</span>
+    <span class="mi">300</span><span class="p">,</span>
+    <span class="nx">place_image</span><span class="p">(</span>
+      <span class="nx">segment_down</span><span class="p">,</span>
+      <span class="mi">200</span><span class="p">,</span>
+      <span class="mi">200</span><span class="p">,</span>
+      <span class="nx">place_image</span><span class="p">(</span>
+        <span class="nx">segment_up</span><span class="p">,</span>
+        <span class="mi">115</span><span class="p">,</span>
+        <span class="mi">110</span><span class="p">,</span>
+        <span class="nx">place_image</span><span class="p">(</span>
+          <span class="nx">segment_right</span><span class="p">,</span>
+          <span class="mi">50</span><span class="p">,</span>
+          <span class="mi">200</span><span class="p">,</span>
+          <span class="nx">empty_scene</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="nx">plse_color</span><span class="p">),</span>
+        <span class="p">),</span>
+      <span class="p">),</span>
+    <span class="p">),</span>
+  <span class="p">),</span>
+<span class="p">);</span></code></pre></figure>
+
+<figcaption class="caption">
+Fig 7. An equivalent of the program in 
+<a href="#gofmt-place_image">Fig 6</a> 
+written in JavaScript, formatted by Prettier.
+Users' original formatting decisions are lost.
+</figcaption>
+</figure>
+
+<p>Making a line-breaking code formatter is much more challenging than making a line-preserving code formatter, 
+as there can be many formatting <em>choices</em> (usually exponentially many) to make decisions over.
+This means performance could become an issue in line-breaking code formatters if their algorithm is inefficient.</p>
+
+<p>At the heart of line-breaking code formatting is <em>pretty printing</em>,
+which is a process that makes formatting decisions when converting the representation of the source code into a formatted text.
+The line-breaking formatters can in fact be further subdivided according to their underlying <em>pretty printer</em>, the engine that does pretty printing.
+We will leave the topic of pretty printing as the subject for the next blog posts.</p>
+
+<h4 id="other-classifications">Other Classifications</h4>
+
+<p>Although the main classification of code formatters is about the treatment of the page width limit,
+code formatters can also be classified with various other criteria.</p>
+
+<p id="token-vs-syntax-tree">
+<i>Token representation vs syntax tree representation</i>: 
+Some code formatters read the source program by lexing it into a <em>list of tokens</em>.
+Other code formatters read the source program by further parsing the tokens into a <em>syntax tree</em>.
+The token representation lacks structure, 
+and works well only for some target languages whose formatting rules are
+ simple enough that they can be determined based on tokens.
+<a href="https://scalameta.org/scalafmt/"><code>scalafmt</code></a> [<a href="#ref-3">3</a>] for the Scala language is an example of a code formatter with the token representation.
+The tree representation by constrast is structured, 
+but it is more difficult to construct.
+One primary problem with the tree representation is comment handling, 
+as traditionally comments are discarded before parsing.
+The syntax tree must be designed to preserve comments somehow, 
+which is possible, but non-trivial.
+<a href="https://github.com/google/rfmt"><code>rfmt</code></a> [<a href="#ref-4">4</a>] for the R language is an example of a code formatter with the tree representation.
+</p>
+
+<p id="lenient-vs-strict">
+<i>Lenient reading vs strict reading</i>:
+The reading step in code formatters maybe <em>lenient</em>. 
+Even when there's a syntax error in the source code, 
+the code formatter will still try to read the code to the best of its ability.
+In constrast, <em>strict</em> reading simply fails when encountering a syntax error.
+Being lenient is obviously desirable, but that comes at the cost of complexity in the reader.
+Furthermore, it may not be possible to create a lenient reader for e.g. languages whose reading is specified within the program 
+(e.g. <a href="https://docs.racket-lang.org/guide/Module_Syntax.html#%28part._hash-lang%29">Racket</a>).
+Leniency is in fact a spectrum and not binary.
+For instance, a code formatter with <a href="#token-vs-syntax-tree">the token representation</a> might be neither lenient nor strict: it might require that lexing is successful, but not parsing.
+<code>clang-format</code> is an example of a code formatter with lenient reading, 
+while Prettier is an example of a code formatter with strict reading.
+</p>
+
+<figure class="figure" id="clang-format-place_image">
+<table>
+<tbody><tr>
+<td>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="p">{</span>
+<span class="k">return</span> <span class="n">place_image</span><span class="p">(</span>
+<span class="n">segment_right</span><span class="p">,</span> 
+<span class="s">"350, 200,</span><span class="err">
+</span><span class="s">place_image(segment_up, </span><span class="err">
+</span><span class="s">285, 300,</span><span class="err">
+</span><span class="s">place_image(segment_down </span><span class="err">
+</span><span class="s">200, 200,</span><span class="err">
+</span><span class="s">place_image(segment_up, </span><span class="err">
+</span><span class="s">115, 110,</span><span class="err">
+</span><span class="s">place_image(segment_right, </span><span class="err">
+</span><span class="s">50, 200,</span><span class="err">
+</span><span class="s">empty_scene(</span><span class="err">
+</span><span class="s">400, 400, </span><span class="err">
+</span><span class="s">plse_color))))))</span><span class="p">;</span>
+<span class="err">}</span></code></pre></figure>
+
+</td>
+<td>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">place_image</span><span class="p">(</span>
+      <span class="n">segment_right</span><span class="p">,</span> <span class="s">"350, 200,</span><span class="err">
+</span><span class="s">      place_image(</span><span class="err">
+</span><span class="s">          segment_up, 285, 300,</span><span class="err">
+</span><span class="s">          place_image(</span><span class="err">
+</span><span class="s">              segment_down 200, 200,</span><span class="err">
+</span><span class="s">              place_image(</span><span class="err">
+</span><span class="s">                  segment_up, 115, 110,</span><span class="err">
+</span><span class="s">                  place_image(</span><span class="err">
+</span><span class="s">                      segment_right, 50,</span><span class="err">
+</span><span class="s">                      200,</span><span class="err">
+</span><span class="s">                      empty_scene(</span><span class="err">
+</span><span class="s">                          400, 400,</span><span class="err">
+</span><span class="s">                          plse_color))))))</span><span class="p">;</span>
+<span class="err">}</span></code></pre></figure>
+
+</td>
+</tr>
+</tbody></table>
+<figcaption class="caption">
+Fig 8. 
+Left: a poorly formatted variant of the program in 
+<a href="#gofmt-place_image">Fig 6</a> and <a href="#prettier-place_image">Fig 7</a>
+written in C, 
+with random character removals and additions, causing many syntax errors.
+Right: the corresponding formatted code output by <code>clang-format</code>, 
+which can handle the errors.
+</figcaption>
+</figure>
+
+<p id="extensible-formatting">
+<i>Fixed formatting vs extensible formatting</i>: 
+In a code formatter, the formatting rules may be <em>fixed</em>,
+which do not allow users to add more rules.
+By contrast, <em>extensible</em> formatting rules allow users to add more rules.
+Extensibility is especially relevant for languages with macros or user-defined syntactic abstractions, 
+as users may want their macro invocations to be formatted in a way that they desire.
+While there are many line-preserving code formatters that are extensible 
+(e.g., <a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Indenting-Macros.html">Elisp's macro indentation customization</a>),
+the customization tends to be very limiting.
+<a href="http://127.0.0.1:4000/2024/03/04/line-preserving-vs-line-breaking">Line-breaking code formatters</a> further experience extra challenges to make them extensible,
+as they must allow users to specify arbitrary formatting choices that the users wish, 
+so that the code formatters can make formatting decisions on these choices.
+To the best of my knowledge, my <a href="https://docs.racket-lang.org/fmt/">Racket code formatter</a> is the only line-breaking code formatter that is fully extensible.
+This is accomplished by using our novel pretty printer [<a href="#ref-5">5</a>] that is composable and expressive (the topic of the next blog posts).
+</p>
+
+<p><em>Refactoring vs non-refactoring</em>:
+Some code formatters may convert one construct to another that is more preferable in the style guide.
+Some may sort the import statements.
+Arguably, these are an extreme form of opinionated changes<a id="note-go-refactoring-caller" href="#note-go-refactoring-callee"><sup>‡</sup></a> that warrant a new category: <em>refactoring</em> code formatting.
+The resulting code from a refactoring code formatter would be even more consistent than the non-refactoring ones.
+One downside is that users may expect code formatting to be simple and easy to verify that it is correct, 
+but this refactoring can introduce the complexity that users may not expect.
+Other <em>non-refactoring</em> code formatters usually only involve whitespace changes.
+However, it would be wrong to restrict non-refactoring code formatting to only whitespace changes.
+<a href="#python-choices">Fig 9</a> shows two formatting choices that a non-refactoring Python code formatter might consider.
+The vertical style has an extra pair of parentheses, due to <a href="https://docs.python.org/2.7/reference/lexical_analysis.html">the requirement in Python’s grammar</a>.</p>
+
+<figure class="figure" id="python-choices">
+<table>
+<tbody><tr>
+<td>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">"first "</span> <span class="o">+</span> <span class="s">"second "</span> <span class="o">+</span> <span class="s">"third"</span>
+    
+    
+    
+   </code></pre></figure>
+
+</td>
+<td>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="s">"first "</span> <span class="o">+</span> 
+        <span class="s">"second "</span> <span class="o">+</span> 
+        <span class="s">"third"</span>
+    <span class="p">)</span></code></pre></figure>
+
+</td>
+</tr>
+</tbody></table>
+<figcaption class="caption">
+Fig 9. Two possible ways to format a Python code with a series of concatenation expression.
+The left one uses the horizontal style, and the right one uses the vertical style. 
+In the vertical style, an extra pair of parentheses must be added, to conform with Python's grammar.
+</figcaption>
+</figure>
+
+<p><em>Incremental vs non-incremental</em>:
+During code development, users might call a code formatter several times.
+An <em>incremental</em> code formatter uses previous formatting to speed up formatting. 
+This can be done in several ways. 
+For example, the code formatter might save the previous formatted output, 
+and only perform formatting in the regions where there are changes.
+Or if the formatting algorithm is dynamic programming, 
+the code formatter might reuse the dynamic programming table, 
+so that previously computed subproblems do not need to be recomputed again.
+The popularly used <a href="https://microsoft.github.io/language-server-protocol/">language server</a> could also help by maintaining states from the previous formatting.
+This incremental formatting must be done with care, however,
+as it should still be behaviorally equivalent to the full formatting from scratch.
+A <em>non-incremental</em> code formatter, by contrast, does not use previous formatting.
+This makes the code formatter simpler. 
+Especially if the code formatter is already fast, 
+it might not make much sense to support the complex incremental feature.</p>
+
+<h3 id="outro">Outro</h3>
+
+<p>In this blog post, we went over how code formatting is useful,
+and then looked at trade-offs of different features in code formatters.
+The next post in the series will talk about desirable properties of code formatters,
+and then focus on line-breaking code formatters (particularly the pretty printing process), 
+as they are more interesting algorithmically, 
+and have a beautiful PL theory behind them.</p>
+
+<hr>
+
+<p id="ref-1">
+[<a href="https://academic.oup.com/comjnl/article/14/2/133/349727">1</a>] R. S. Scowen et al. SOAP - A Program which Documents and Edits ALGOL 60 Programs. Comput. J. 14(2): 133-135 (1971). 
+</p>
+
+<p id="ref-2">
+[<a href="http://www.softwarepreservation.net/projects/LISP/MIT/AIM-279-Goldstein-Pretty_Printing.pdf">2</a>] Ira Goldstein. Pretty-printing Converting List to Linear Structure.
+Massachusetts Institute of Technology. Artificial Intelligence Laboratory,
+1973.
+</p>
+
+<p id="ref-3">
+[<a href="https://geirsson.com/assets/olafur.geirsson-scalafmt-thesis.pdf">3</a>] Ólafur Páll Geirsson. scalafmt: opinionated code formatter for Scala. 2016.
+</p>
+
+<p id="ref-4">
+[<a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44667.pdf">4</a>] Phillip Yelland. A New Approach to Optimal Code Formatting. 2016.
+</p>
+
+<p id="ref-5">
+[<a href="https://doi.org/10.1145/3622837">5</a>] Sorawee 
+Porncharoenwase, Justin Pombrio, and Emina Torlak. A Pretty Expressive 
+Printer. Proc. ACM Program. Lang. 7(OOPSLA2): 1122-1149 (2023). 
+</p>
+
+<hr>
+
+<p><a id="note-consistency-callee" href="#note-consistency-caller">#</a>:
+There are different scales of consistency, however. 
+In this post we are talking about consistency within a <em>project</em>,
+but some may only care about consistency within a file.
+Some may prefer a language-level consistency.</p>
+
+<p><a id="note-opinionated-callee" href="#note-opinionated-caller">§</a>: 
+The definition of <em>opinionated</em> in this post follows the master’s thesis by Ólafur Páll Geirsson [<a href="#ref-3">3</a>].
+However, some people may colloquially use <em>opinionated</em> to mean being less flexible or having few configuration options. 
+In goal in the end for <em>opinionated</em> code formatters is to improve consistency,
+and it could be argued that having many knobs to adjust decreases the consistency.</p>
+
+<p><a id="note-go-line-preserving-callee" href="#note-go-line-preserving-caller">†</a>:
+ 
+Go is mostly a line-preserving code formatter, 
+but it does have heuristics to add line breaks in some cases (including 
+to avoid going over the page width limit in some of these cases), as 
+shown below.</p>
+
+<figure class="figure">
+<table>
+<tbody><tr>
+<td>
+
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><span class="k">func</span> <span class="n">test</span><span class="p">()</span> <span class="kt">int32</span> <span class="p">{</span><span class="k">return</span> <span class="m">42</span>
+<span class="p">}</span>
+ </code></pre></figure>
+
+</td>
+<td>
+
+<figure class="highlight"><pre><code class="language-go" data-lang="go"><span class="k">func</span> <span class="n">test</span><span class="p">()</span> <span class="kt">int32</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="m">42</span>
+<span class="p">}</span></code></pre></figure>
+
+</td>
+</tr>
+</tbody></table>
+<figcaption class="caption">
+Fig A. Left: a poorly formatted Go code.
+Right: the corresponding formatted code output by <code>gofmt</code>.
+</figcaption>
+</figure>
+
+<p><a id="note-go-refactoring-callee" href="#note-go-refactoring-caller">‡</a>: 
+It may be somewhat surprising that <code class="language-plaintext highlighter-rouge">gofmt</code>, which is an unopinionated code formatter, is refactoring.
+For example, with the right settings, it would simplify <code class="language-plaintext highlighter-rouge">arr[start:len(arr)]</code> to <code class="language-plaintext highlighter-rouge">arr[start:]</code>.</p>
+
+
+  </div>
+
+
+
+  <div class="post-keywords"><em>Keywords:</em>
+    
+      
+      <span class="keywords-container"><a href="http://127.0.0.1:4000/tag/code-formatting"><code class="highligher-rouge">code-formatting</code></a></span>
+    
+      
+      <span class="keywords-container"><a href="http://127.0.0.1:4000/tag/pretty-printing"><code class="highligher-rouge">pretty-printing</code></a></span>
+    
+  </div>
+
+
+
+
+  <div class="back"> <a href="http://127.0.0.1:4000/blog"><i>Back to blog posts...</i></a> </div>
+
+
+
+  <!-- <div class="date">
+    Written on March  4, 2024
+  </div> -->
+
+
+</article>
+<script type="text/javascript" async="" src="UW%20PLSE%20The%20Science%20of%20Code%20Formatting%20(Part%20I)_files/js"></script><script async="" src="UW%20PLSE%20The%20Science%20of%20Code%20Formatting%20(Part%20I)_files/analytics.js"></script><script src="UW%20PLSE%20The%20Science%20of%20Code%20Formatting%20(Part%20I)_files/MathJax.js" id=""></script>
+
+  </article>
+
+  <div class="footer">
+  <a href="https://github.com/uwplse/uwplse.github.io/edit/main/_posts/2024-03-04-code-formatting.md">Edit on GitHub</a> —
+  <a href="http://www.cs.washington.edu/">Computer Science &amp;
+    Engineering</a>
+  at the
+  <a href="http://www.washington.edu/">University of
+    Washington</a>
+</div>
+
+
+  <!-- <div class="footer">
+    <a href="https://github.com/uwplse/uwplse.github.io/edit/main/_posts/2024-03-04-code-formatting.md">Edit on GitHub</a> —
+    <a href="http://www.cs.washington.edu/">Computer Science &amp;
+      Engineering</a>
+    at the
+    <a href="http://www.washington.edu/">University of
+      Washington</a>
+  </div> -->
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-65215143-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+</body></html>
